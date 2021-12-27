@@ -1,9 +1,12 @@
+import React from 'react'
 import './App.css';
 
-function App() {
-  return (
-    "RRRRRREEEEEEEEAAAAAACCCCCCCTTTTTTT"
-  );
+class App extends React.Component {
+  render() {
+    return (
+      "RRRRRREEEEEEEEAAAAAACCCCCCCTTTTTTT"
+    );
+  }
 }
 
 export default App;
