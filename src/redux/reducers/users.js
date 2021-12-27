@@ -1,8 +1,8 @@
-function users(state = [], action) {
+function usersReducer(state = [], action) {
   switch (action.type) {
     default:
       return state
   }
 }
 
-export default users
+export default usersReducer
