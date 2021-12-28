@@ -9,17 +9,23 @@ export const setCurrentUser = (user) => {
 
 // asynchronous
 export const login = (credentials) => {
-  return function dispatch() {
-    return fetch("https://localhost3000/api/v1/login", {
+  return dispatch => {
+    return fetch("http://localhost:3000/api/v1/login", {
       method: "POST", // sending data of a new user
       headers: {
-        "Contenet-Type":"application/json",
+        "Content-Type":"application/json",
         "Accept":"application/json"
       },
-      body: JSON.stringify({
-        username: "joeyhup", 
-        password: "password"
-      })
+      body: JSON.stringify(credentials)
     })
+    .then(resp => resp.json())
+    .then(user => {
+      if (user.error) {
+        alert(user.error)
+      } else {
+        dispatch(setCurrentUser(user))
+      }
+    })
+    .catch
   }
 }
