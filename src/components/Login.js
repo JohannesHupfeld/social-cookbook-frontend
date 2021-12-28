@@ -15,13 +15,13 @@ const Login = ({ loginForm, updateLoginForm, login }) => {
     updateLoginForm(updateFormInfo)
   }
 
-  const handleFormSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     login(loginForm)
   }
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleSubmit}>
       <input placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleFormChange} /> 
       <input placeholder="password" value={loginForm.password} name="password" type="text" onChange={handleFormChange} /> 
       <input type="submit" value="Log In" />
