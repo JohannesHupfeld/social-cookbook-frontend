@@ -6,7 +6,7 @@ const initialState = {
 function loginFormReducer(state = initialState, action) { 
   switch (action.type) {
     case "UPDATE_LOGIN_FORM":
-      return action.user
+      return action.formData
     default:
       return state
   }
