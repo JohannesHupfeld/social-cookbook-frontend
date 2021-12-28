@@ -16,7 +16,10 @@ export const login = (credentials) => {
         "Contenet-Type":"application/json",
         "Accept":"application/json"
       },
-      body: JSON.stringify({username: "joeyhup", password: "password"})
+      body: JSON.stringify({
+        username: "joeyhup", 
+        password: "password"
+      })
     })
   }
 }
