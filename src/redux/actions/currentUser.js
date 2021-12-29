@@ -1,4 +1,4 @@
-// synchronous 
+// SYNCHRONOUS
 export const setCurrentUser = (user) => {
   return {
     type: "SET_CURRENT_USER",
@@ -7,10 +7,38 @@ export const setCurrentUser = (user) => {
   }
 } // expect this action creator to recieve a user object as an argument which will then take the place of the second argument in this returning action 
 
-// asynchronous
+export const clearCurrentUser = () => { // clears the user in the front end 
+  return {
+    type: "CLEAR_CURRENT_USER"
+  }
+}
+
+// ASYNCHRONOUS
+export const getCurrentUser = () => {
+  return dispatch => {
+    fetch("http://localhost:3001/api/v1/get_current_user", {
+      credentials: "include",
+      method: "GET", // sending data of a new user
+      headers: {
+        "Content-Type":"application/json",
+        "Accept":"application/json"
+      }
+    })
+    .then(resp => resp.json())
+    .then(user => {
+      if (user.error) {
+        alert(user.error)
+      } else {
+        dispatch(setCurrentUser(user))
+      }
+    })
+    .catch(console.log)
+  }
+}
+
 export const login = (credentials) => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/login", {
+    fetch("http://localhost:3001/api/v1/login", {
       credentials: "include",
       method: "POST", // sending data of a new user
       headers: {
@@ -31,24 +59,15 @@ export const login = (credentials) => {
   }
 }
 
-export const getCurrentUser = () => {
+export const logout = () => { // takes care of clearing session in backend 
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/get_current_user", {
-      credentials: "include",
-      method: "GET", // sending data of a new user
-      headers: {
-        "Content-Type":"application/json",
-        "Accept":"application/json"
-      },
+    dispatch(clearCurrentUser()) // optimistic 
+    return fetch('http://localhost:300 1/api/v1/logout', {
+      credentials: "include", // sends back cookies
+      method: "DELETE"
     })
-    .then(resp => resp.json())
-    .then(user => {
-      if (user.error) {
-        alert(user.error)
-      } else {
-        dispatch(setCurrentUser(user))
-      }
-    })
-    .catch(console.log)
+    // .then(dispatch(clearCurrentUser())) ** would be pessimistic 
   }
 }
+
+// thunk allows us to return an action creator "dispatch" which is a function
