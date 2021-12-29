@@ -14,7 +14,7 @@ class App extends React.Component { // made a class to have componentDidMount
   render() {
     return (
       <div className='App'>      
-        <Navbar />
+        <Navbar /> 
         <Main /> 
       </div>
     );
