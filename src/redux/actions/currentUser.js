@@ -52,7 +52,7 @@ export const login = (credentials) => {
       if (user.error) {
         alert(user.error)
       } else {
-        dispatch(setCurrentUser(user.data.attributes))
+        dispatch(setCurrentUser(user))
       }
     })
     .catch(console.log)
