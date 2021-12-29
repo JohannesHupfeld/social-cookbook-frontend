@@ -62,7 +62,7 @@ export const login = (credentials) => {
 export const logout = () => { // takes care of clearing session in backend 
   return dispatch => {
     dispatch(clearCurrentUser()) // optimistic 
-    return fetch('http://localhost:300 1/api/v1/logout', {
+    return fetch('http://localhost:3001/api/v1/logout', {
       credentials: "include", // sends back cookies
       method: "DELETE"
     })
