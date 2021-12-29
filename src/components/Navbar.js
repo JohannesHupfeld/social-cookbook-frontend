@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 const Navbar = ({ currentUser }) => { // currentUser comes from mapStateToProps
 
   return (
-   <div className='nav-bar'>
+   <div className='Navbar'>
      { currentUser ? <h2>Welcome {currentUser.name}</h2> : ""} 
      { currentUser ? <Logout /> : <Login /> } {/* wrapped in curlies because its js code jsx */}
    </div>
