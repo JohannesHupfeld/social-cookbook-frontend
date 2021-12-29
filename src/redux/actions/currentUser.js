@@ -29,7 +29,7 @@ export const getCurrentUser = () => {
       if (user.error) {
         alert(user.error)
       } else {
-        dispatch(setCurrentUser(user))
+        dispatch(setCurrentUser(user.data.attributes))
       }
     })
     .catch(console.log)
@@ -52,7 +52,7 @@ export const login = (credentials) => {
       if (user.error) {
         alert(user.error)
       } else {
-        dispatch(setCurrentUser(user))
+        dispatch(setCurrentUser(user.data.attributes))
       }
     })
     .catch(console.log)
