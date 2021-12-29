@@ -13,6 +13,12 @@ export const clearCurrentUser = () => { // clears the user in the front end
   }
 }
 
+export const resetLoginForm = () => { // lives in login 
+  return {
+    type: "RESET_LOGIN_FORM"
+  }
+}
+
 // ASYNCHRONOUS
 export const getCurrentUser = () => {
   return dispatch => {
@@ -52,7 +58,8 @@ export const login = (credentials) => {
       if (user.error) {
         alert(user.error)
       } else {
-        dispatch(setCurrentUser(user))
+        dispatch(setCurrentUser(user.data.attributes))
+        dispatch(resetLoginForm())
       }
     })
     .catch(console.log)
