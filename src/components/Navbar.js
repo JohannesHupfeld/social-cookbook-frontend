@@ -9,10 +9,12 @@ const Navbar = ({ currentUser }) => { // currentUser comes from mapStateToProps
   return (
    <div className='Navbar'>
      { currentUser ? <h2>Welcome {currentUser.name}</h2> : ""} 
-     { currentUser ? <Logout /> : <Login /> } {/* wrapped in curlies because its js code jsx */}
+     <button>Login</button>
+     <button>Signup</button>
+     { currentUser ? <Logout /> : <Login /> } wrapped in curlies because its js code jsx
    </div>
   )
-}
+} 
 
 const mapStateToProps = ({currentUser}) => { // destructing because currentUser is an object. comes from redux store
   return {
