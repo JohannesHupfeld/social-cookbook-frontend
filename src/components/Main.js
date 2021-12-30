@@ -1,9 +1,10 @@
 import React from 'react'
+import  Recipes from './Recipes.js'
 
 const Main = () => {
   return (
     <div className='Main'>
-       test test MAIN CONTAINER test test
+       <Recipes />
     </div>
   )
 }
