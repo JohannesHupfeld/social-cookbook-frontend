@@ -1,3 +1,5 @@
+import { getRecipes } from './recipes.js'
+
 // SYNCHRONOUS -- frontend
 export const setCurrentUser = (user) => {
   return {
@@ -36,6 +38,7 @@ export const getCurrentUser = () => {
         alert(user.error)
       } else {
         dispatch(setCurrentUser(user.data))
+        dispatch(getRecipes())
       }
     })
     .catch(console.log)
@@ -59,6 +62,7 @@ export const login = (credentials) => {
         alert(user.error)
       } else {
         dispatch(setCurrentUser(user.data.attributes))
+        dispatch(getRecipes())
         dispatch(resetLoginForm())
       }
     })
