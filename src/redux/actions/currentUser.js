@@ -1,4 +1,4 @@
-// SYNCHRONOUS
+// SYNCHRONOUS -- frontend
 export const setCurrentUser = (user) => {
   return {
     type: "SET_CURRENT_USER",
@@ -19,7 +19,7 @@ export const resetLoginForm = () => { // lives in login
   }
 }
 
-// ASYNCHRONOUS
+// ASYNCHRONOUS -- backend
 export const getCurrentUser = () => {
   return dispatch => {
     fetch("http://localhost:3001/api/v1/get_current_user", {
@@ -35,7 +35,7 @@ export const getCurrentUser = () => {
       if (user.error) {
         alert(user.error)
       } else {
-        dispatch(setCurrentUser(user.data.attributes))
+        dispatch(setCurrentUser(user.data))
       }
     })
     .catch(console.log)
