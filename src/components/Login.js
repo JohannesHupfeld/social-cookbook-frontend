@@ -2,7 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updateLoginForm } from '../redux/actions/loginForm.js'
-import { login } from '../redux/actions/currentUser.js'
+import { login } from '../redux/actions/loginForm'
 
 const Login = ({ loginForm, updateLoginForm, login }) => {
 
@@ -24,7 +24,7 @@ const Login = ({ loginForm, updateLoginForm, login }) => {
     <form onSubmit={handleSubmit}>
       <input placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleFormChange} /> 
       <input placeholder="password" value={loginForm.password} name="password" type="text" onChange={handleFormChange} /> 
-      <input type="submit" value="Log In" />
+      <input type="submit" value="Login" />
     </form>
   )
 }
