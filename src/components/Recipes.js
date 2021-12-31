@@ -1,12 +1,13 @@
 import React from 'react'
 import RecipeCard from './RecipeCard.js'
-import { connect } from 'react-redux'
-
+import { connect } from 'react-redux' 
 
 const Recipes = (props) => {
-  const recipeCards = props.recipes.map(r => <RecipeCard recipe={r} key={r.id} />)
+  const recipeCards = props.recipes.map(r => <RecipeCard recipe={r} key={r.id} />) 
+  // const recipeCards = props.recipes.currentUser ? props.recipes.map(r => <RecipeCard recipe={r} key={r.id} />) : []
   return (
-    recipeCards
+    recipeCards 
+    // recipeCards.currentUser ? recipeCards : null 
   )
 }
 
