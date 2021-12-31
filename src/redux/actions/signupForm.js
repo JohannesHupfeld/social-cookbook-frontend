@@ -23,7 +23,7 @@ export const signup = (credentials) => {
     const credentialInfo = {
       user: credentials
     }
-    fetch("http://localhost:3001/api/v1/signup", {
+    fetch("http://localhost:3001/api/v1/signup", { //returns a promise
       credentials: "include",
       method: "POST", // sending data of a new user
       headers: {
@@ -32,8 +32,8 @@ export const signup = (credentials) => {
       },
       body: JSON.stringify(credentialInfo)
     })
-    .then(resp => resp.json())
-    .then(user => {
+    .then(resp => resp.json()) //parses that promise to json
+    .then(user => { // returns user 
       if (user.error) {
         alert(user.error)
       } else {
