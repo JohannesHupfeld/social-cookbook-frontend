@@ -50,11 +50,12 @@ export const login = (credentials) => {
 
 export const logout = () => { // takes care of clearing session in backend 
   return dispatch => {
-    dispatch(clearCurrentUser()) // optimistic 
+    // dispatch(clearCurrentUser() // optimistic 
     return fetch('http://localhost:3001/api/v1/logout', {
       credentials: "include", // sends back cookies
       method: "DELETE"
     })
-    // .then(dispatch(clearCurrentUser())) ** would be pessimistic 
+    .then(dispatch(clearCurrentUser())) //** would be pessimistic 
+    .catch(console.log)
   }
 }
