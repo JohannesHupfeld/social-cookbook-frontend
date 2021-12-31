@@ -1,17 +1,22 @@
+import React from 'react'
 import Login from './Login.js'
 import Logout from './Logout.js'
-import React from 'react'
+import Signup from './Signup.js'
+import Recipes from './Recipes.js'
 import { connect } from 'react-redux'
+import { Route } from 'react-router-dom'
 
 
 const Navbar = ({ currentUser }) => { // currentUser comes from mapStateToProps
 
   return (
    <div className='Navbar'>
-     { currentUser ? <h2>Welcome {currentUser.name}</h2> : ""} 
-     <button>Login</button>
-     <button>Signup</button>
-     { currentUser ? <Logout /> : <Login /> } wrapped in curlies because its js code jsx
+     { currentUser ? <h2>Welcome {currentUser.name}</h2> : <h2>Welcome to the CookBook App</h2>} 
+     { currentUser ? <Logout /> : <h3>Login Here<Login /></h3>} 
+     { currentUser ? <h3>Here are your Recipes<Recipes /></h3> : <h3>Signup Here<Signup /></h3>}
+     <Route exact path='/signup' component={Signup}/>
+     <Route exact path='/login' component={Login}/>
+     {/* <Route exact path='/recipes' component={Recipes}/> */}
    </div>
   )
 } 
