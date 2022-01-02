@@ -1,5 +1,4 @@
 // SYNCH
-
 export const setRecipes = recipes => {
   return {
     type: "SET_RECIPES",
