@@ -18,7 +18,7 @@ export const updateSignupForm = (formData) => { // lives in login
 
 
 // ASYNCH
-export const signup = (credentials) => {
+export const signup = (credentials, history) => {
   return dispatch => {
     const credentialInfo = {
       user: credentials
@@ -40,6 +40,7 @@ export const signup = (credentials) => {
         dispatch(setCurrentUser(user.data.attributes))
         dispatch(getRecipes())
         dispatch(resetSignupForm())
+        history.pushState()
       }
     })
     .catch(console.log)

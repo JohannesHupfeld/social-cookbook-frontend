@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { updateSignupForm } from '../redux/actions/signupForm.js'
 import { signup } from '../redux/actions/signupForm'
 
-const Signup = ({ signupForm, updateSignupForm, signup }) => { // arguments are state from store used as props
+const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // arguments are state from store used as props
 
   const handleFormChange = (e) => {
     const { name, value } = e.target
@@ -17,11 +17,12 @@ const Signup = ({ signupForm, updateSignupForm, signup }) => { // arguments are 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    signup(signupForm)
+    signup(signupForm, history)
   }
 
   return (
     <form onSubmit={handleSubmit}>
+      <h4>Please signup below</h4>
       <input placeholder="name" value={signupForm.name} name="name" type="text" onChange={handleFormChange} /> 
       <input placeholder="username" value={signupForm.username} name="username" type="text" onChange={handleFormChange} /> 
       <input placeholder="password" value={signupForm.password} name="password" type="text" onChange={handleFormChange} /> 

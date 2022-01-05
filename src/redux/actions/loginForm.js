@@ -24,8 +24,8 @@ export const resetLoginForm = () => { // lives in login
 
 
 // ASYNCH
-export const login = (credentials) => {
-  return dispatch => {
+export const login = (credentials, history) => {
+  return dispatch => { // allowed becuase of thunk
     fetch("http://localhost:3001/api/v1/login", {
       credentials: "include",
       method: "POST", // sending data of a new user
@@ -43,6 +43,7 @@ export const login = (credentials) => {
         dispatch(setCurrentUser(user.data.attributes))
         dispatch(getRecipes())
         dispatch(resetLoginForm())
+        history.push('/') // if logged in successfuly change url
       }
     })
     .catch(console.log)

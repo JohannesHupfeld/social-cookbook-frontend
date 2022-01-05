@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { updateLoginForm } from '../redux/actions/loginForm.js'
 import { login } from '../redux/actions/loginForm'
 
-const Login = ({ loginForm, updateLoginForm, login }) => {
+const Login = ({ loginForm, updateLoginForm, login, history}) => {
 
   const handleFormChange = (e) => {
     const { name, value } = e.target
@@ -17,11 +17,12 @@ const Login = ({ loginForm, updateLoginForm, login }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    login(loginForm)
+    login(loginForm, history) // histroy is a mutable object
   }
 
   return (
     <form onSubmit={handleSubmit}>
+      <h4>PLease login below </h4>
       <input placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleFormChange} /> 
       <input placeholder="password" value={loginForm.password} name="password" type="text" onChange={handleFormChange} /> 
       <input type="submit" value="Login" />
