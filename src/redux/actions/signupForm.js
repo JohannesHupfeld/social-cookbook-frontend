@@ -40,7 +40,7 @@ export const signup = (credentials, history) => {
         dispatch(setCurrentUser(user.data.attributes))
         dispatch(getRecipes())
         dispatch(resetSignupForm())
-        history.pushState('/')
+        history.push('/')
       }
     })
     .catch(console.log)
