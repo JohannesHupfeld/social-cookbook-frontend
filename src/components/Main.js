@@ -1,33 +1,20 @@
-// import React from 'react'
-// import  Recipes from './Recipes.js'
-// import Login from '../components/Login.js'
-// import Signup from '../components/Signup.js'
-// import Home from '../components/Home.js'
-// import { Route } from 'react-router-dom'
-// import { connect } from 'react-redux'
+import React from 'react'
+// import Login from './Login'
+// import Logout from './Logout'
+// import Signup from './Signup'
+import { Link } from 'react-router-dom'
 
-
-// class Main extends React.Component {
+const Main = () => (
+  <div>
+    <h2>
+      <Link to='/signup'>Signup</Link>
+      <br></br>
+      or
+      <br></br>
+      <Link to='/login'>Login</Link>
+    </h2>
   
-  
-// render(currentUser) {
-//   const loggedIn = !!currentUser
-//   return (
-//     <div className='Main'>
-//       <Route exact path='/' render={() => loggedIn ? <Recipes /> : <Home />}/>
-//       <Route exact path='/signup' component={Signup}/>
-//       <Route exact path='/login' component={Login}/>
-//       <Route exact path='/recipes' component={Recipes}/>
-//       <Recipes />
-//     </div>
-//     )
-//   }
-// }
+  </div>
+)
 
-// const mapStateToProps = ({currentUser}) => {
-//   return {
-//     currentUser
-//   }
-// }
-
-// export default connect(mapStateToProps)(Main)
+export default Main
