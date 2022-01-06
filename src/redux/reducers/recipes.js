@@ -8,9 +8,6 @@ function recipeReducer(state = [], action) {
     case "CLEAR_RECIPES":
       return []
 
-    case "CLEAR_RECIPE_FORM":
-      return []
-
     default:
       return state
   }
