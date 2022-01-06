@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateSignupForm } from '../redux/actions/signupForm.js'
 import { signup } from '../redux/actions/signupForm'
+import { Link } from 'react-router-dom'
 
 const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // arguments are state from store used as props
 
@@ -21,13 +22,17 @@ const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // argum
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h4>Please signup below</h4>
-      <input placeholder="name" value={signupForm.name} name="name" type="text" onChange={handleFormChange} /> 
-      <input placeholder="username" value={signupForm.username} name="username" type="text" onChange={handleFormChange} /> 
-      <input placeholder="password" value={signupForm.password} name="password" type="text" onChange={handleFormChange} /> 
-      <input type="submit" value="Signup" />
-    </form>
+    <div className='Signup'>
+      <form onSubmit={handleSubmit}>
+        <h4>Please signup below</h4>
+        <input placeholder="name" value={signupForm.name} name="name" type="text" onChange={handleFormChange} />
+        <input placeholder="username" value={signupForm.username} name="username" type="text" onChange={handleFormChange} />
+        <input placeholder="password" value={signupForm.password} name="password" type="text" onChange={handleFormChange} />
+        <input type="submit" value="Signup" />
+        <br></br>
+        <Link to="/login">or Login</Link>
+      </form>
+    </div>
   )
 }
 
