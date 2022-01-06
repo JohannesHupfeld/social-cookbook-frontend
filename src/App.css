@@ -28,6 +28,34 @@
   color: #61dafb;
 }
 
+.RecipeCard {
+  background-color: turquoise;
+}
+
+.Create-Recipe-Form {
+  background-color: turquoise;
+}
+
+.App {
+  background-color: #292929;
+}
+
+.Home {
+  background-color: gold;
+}
+
+.Login {
+  background-color: gold;
+}
+
+.Signup {
+  background-color: gold;
+}
+
+.Navbar {
+  background-color: gold;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
