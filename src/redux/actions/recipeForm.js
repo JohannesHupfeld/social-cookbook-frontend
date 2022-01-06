@@ -41,7 +41,7 @@ export const createRecipe = (recipeData, history) => {
         dispatch(setRecipes(recipe.data.attributes))
         dispatch(resetCreateRecipeForm)
         dispatch(updateCreateRecipeForm)
-        history.push('/')
+        history.push('/recipes')
       }
     })
     .catch(console.log)
