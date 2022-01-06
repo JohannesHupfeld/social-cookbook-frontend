@@ -6,6 +6,18 @@ export const setRecipes = recipes => {
   }
 }
 
+export const clearRecipes = () => {
+  return {
+    type: "CLEAR_RECIPES"
+  }
+}
+
+export const clearRecipeForm = () => {
+  return {
+    type: "CLEAR_RECIPE_FORM"
+  }
+}
+
 
 // ASYNCH 
 
