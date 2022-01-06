@@ -5,7 +5,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = () => (
-  <div>
+  <div className='Home'>
     <h2>
       <Link to='/signup'>Signup</Link>
       <br></br>
