@@ -4,14 +4,15 @@ import currentUser from './reducers/currentUser.js'
 import signupForm from './reducers/signupForm.js'
 import loginForm from './reducers/loginForm.js'
 import recipes from './reducers/recipes.js'
-import recipeForm from './reducers/recipeForm.js'
+import recipeForm from './reducers/recipeForm.js' //import reducer functions 
 
 const reducer = combineReducers({
-  currentUser,
+  currentUser, // keys in my redux store
   loginForm,
   signupForm,
   recipes,
-  recipeForm
+  recipeForm // short hand
+  // recipeForm: recipeform
 })
 
 // const composeEnhancer = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
