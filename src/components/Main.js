@@ -1,20 +1,39 @@
 import React from 'react'
-// import Login from './Login'
-// import Logout from './Logout'
-// import Signup from './Signup'
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { getCurrentUser } from '../redux/actions/currentUser'
+import { Route, withRouter } from 'react-router-dom'
+import CreateRecipeForm from './CreateRecipeForm'
+import Recipes from './Recipes'
+import Signup from './Signup'
+import Logout from './Logout'
+import Login from './Login'
+import Home from './Home'
 
-const Main = () => (
-  <div>
-    <h2>
-      <Link to='/signup'>Signup</Link>
-      <br></br>
-      or
-      <br></br>
-      <Link to='/login'>Login</Link>
-    </h2>
-  
-  </div>
-)
+class Main extends React.Component {
 
-export default Main
+  componentDidMount() {
+    this.props.getCurrentUser()
+  }
+
+  render() {
+    const {loggedIn} = this.props
+    return (
+      <div className='Main'>
+        { loggedIn ? <Logout /> : null}
+        <Route exact path='/signup' component={Signup}/>
+        <Route exact path='/login' component={Login}/>
+        <Route exact path='/' render={(props)=> loggedIn ? <Recipes {...props} /> : <Home {...props}/>}/>
+        <Route exact path='/recipes' component={Recipes}/>
+        <Route exact path='/recipes/new' component={CreateRecipeForm}/>
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser
+  })
+}
+
+export default withRouter(connect(mapStateToProps, { getCurrentUser })(Main))
