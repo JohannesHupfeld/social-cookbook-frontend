@@ -4,7 +4,7 @@ import React from 'react'
 // import Signup from './Signup'
 import { Link } from 'react-router-dom'
 
-const Main = () => (
+const Home = () => (
   <div>
     <h2>
       <Link to='/signup'>Signup</Link>
@@ -17,4 +17,4 @@ const Main = () => (
   </div>
 )
 
-export default Main
+export default Home
