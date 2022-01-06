@@ -1,7 +1,6 @@
 import { setCurrentUser } from './currentUser.js'
-import { getRecipes } from './recipes.js'
+// import { getRecipes } from './recipes.js'
 import { clearRecipes } from './recipes.js'
-import { clearRecipeForm } from './recipes.js'
 
 // SYNCH
 export const updateLoginForm = (formData) => { // without this you wouldnt see the username or password as you fill it in
@@ -52,7 +51,7 @@ export const login = (credentials, history) => {
   }
 }
 
-export const logout = (history) => { // takes care of clearing session in backend 
+export const logout = (e) => { // takes care of clearing session in backend 
   return dispatch => {
     // dispatch(clearCurrentUser() // optimistic 
     dispatch(clearRecipes())
@@ -60,9 +59,7 @@ export const logout = (history) => { // takes care of clearing session in backen
       credentials: "include", // sends back cookies
       method: "DELETE"
     }) 
-    .then(dispatch(clearRecipeForm()))
     .then(dispatch(clearCurrentUser())) //** would be pessimistic 
-    // .then(history.push('/'))
     .catch(console.log)
   }
 }
