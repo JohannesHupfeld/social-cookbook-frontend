@@ -5,7 +5,6 @@ import { Route, withRouter } from 'react-router-dom'
 import CreateRecipeForm from './CreateRecipeForm'
 import Recipes from './Recipes'
 import Signup from './Signup'
-import Logout from './Logout'
 import Login from './Login'
 import Home from './Home'
 
@@ -19,10 +18,10 @@ class Main extends React.Component {
     const {loggedIn} = this.props
     return (
       <div className='Main'>
-        { loggedIn ? <Logout /> : null}
         <Route exact path='/signup' component={Signup}/>
         <Route exact path='/login' component={Login}/>
         <Route exact path='/' render={(props)=> loggedIn ? <Recipes {...props} /> : <Home {...props}/>}/>
+        {/* <Route exact path='/' render={(props) => !loggedIn ? <Home {...props}/> : <Recipes {...props}/>}/> */}
         <Route exact path='/recipes' component={Recipes}/>
         <Route exact path='/recipes/new' component={CreateRecipeForm}/>
       </div>
