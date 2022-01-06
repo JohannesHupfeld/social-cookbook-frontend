@@ -3,10 +3,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from '../redux/actions/loginForm.js'
 
-const Logout = ({ logout }) => {
+const Logout = ({ logout, history }) => {
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    logout()
+    history.push('/home')
+
+  }
   return (
-    <form onSubmit={logout}>
+    <form onSubmit={handleSubmit}>
       <input type="submit" value="Logout" />
     </form>
   )
