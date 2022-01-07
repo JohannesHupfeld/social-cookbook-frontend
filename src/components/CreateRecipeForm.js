@@ -22,6 +22,7 @@ const CreateRecipeForm = ({ recipeForm, updateCreateRecipeForm, createRecipe, hi
   return (
       <div className='Create-Recipe-Form'>
         <form onSubmit={handleSubmit}>
+          <br></br>
           <label for="name">Name</label>
           <br></br>
           <input placeholder='name' value={recipeForm.name} name="name" type="text" onChange={handleFormChange} />
