@@ -5,7 +5,7 @@ const RecipeCard = ({ recipe }) => {
     <div className='RecipeCard'> 
       
       <h2>{recipe.attributes.name}</h2>
-      <img src={recipe.attributes.image_url} className="image" activeClassName="image-active"alt=""></img>
+      <img src={recipe.attributes.image_url} className="image" alt=""></img>
       <br></br>
       <strong>Ingredients</strong>
       <h3>{recipe.attributes.ingredients}</h3>

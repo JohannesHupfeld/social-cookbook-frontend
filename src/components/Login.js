@@ -30,7 +30,7 @@ const Login = ({ loginForm, updateLoginForm, login, history}) => {
         <input type="submit" value="Login" />
         <br></br>
         <br></br>
-        <Link to="/signup" className='login-to-signup' activeClassName='login-to-signup-active'> or Signup</Link>
+        <Link to="/signup" className='login-to-signup'> or Signup</Link>
       </form>
     </div>
   )
