@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom'
 
 const Home = () => (
   <div className='Home'>
-    <h2>
+    <h1>
       <Link to='/signup'>Signup</Link>
       <br></br>
       or
       <br></br>
       <Link to='/login'>Login</Link>
-    </h2>
+    </h1>
   
   </div>
 )
