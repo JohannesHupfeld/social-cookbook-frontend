@@ -31,7 +31,7 @@ const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // argum
         <input type="submit" value="Signup" />
         <br></br>
         <br></br>
-        <Link to="/login" className='signup-to-login' activeClassName='signup-to-login-active'>or Login</Link>
+        <Link to="/login" className='signup-to-login'>or Login</Link>
       </form>
     </div>
   )
