@@ -34,6 +34,11 @@
 
 .Create-Recipe-Form {
   background-color: turquoise;
+  border-radius: 20px;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+  min-height: 35vh;
 }
 
 .App {
@@ -46,17 +51,29 @@
 
 .Login {
   background-color: gold;
-  min-height: 15vh
+  min-height: 15vh;
+  border-radius: 20px;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
 }
 
 .Signup {
   background-color: gold;
-  min-height: 15vh
+  min-height: 15vh;
+  border-radius: 20px;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
 }
 
 .Navbar {
   background-color: gold;
-  min-height: 20vh
+  min-height: 20vh;
+  border-radius: 20px;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
 }
 
 body {
@@ -70,6 +87,7 @@ Link {
 .navbar-nav {
   font-size: x-large;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
 }
 
 .signup-to-login {
@@ -85,6 +103,20 @@ Link {
 }
 
 .image {
+  border-radius: 20px;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+}
+
+.RecipeCard {
+  border-radius: 20px;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+}
+
+.Home {
   border-radius: 20px;
   border-width: 3px;
   border-color: black;
