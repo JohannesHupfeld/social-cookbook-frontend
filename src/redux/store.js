@@ -6,7 +6,7 @@ import loginForm from './reducers/loginForm.js'
 import recipes from './reducers/recipes.js'
 import recipeForm from './reducers/recipeForm.js' //import reducer functions 
 
-const reducer = combineReducers({
+const reducer = combineReducers({ //takes an object
   currentUser, // keys in my redux store
   loginForm,
   signupForm,
