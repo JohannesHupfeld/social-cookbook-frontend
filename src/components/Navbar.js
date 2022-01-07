@@ -7,9 +7,13 @@ import { NavLink } from 'react-router-dom'
 const Navbar = ({ loggedIn }) => {
   return (
     <div className='Navbar'>
-      <NavLink to='/recipes'>Recipes</NavLink>
       <br></br>
-      <NavLink to='/recipes/new'>New Recipe</NavLink> 
+      <NavLink to='/recipes' activeClasssName="navbar-nav-active" className="navbar-nav">Recipes</NavLink>
+      <br></br>
+      <br></br>
+      <NavLink to='/recipes/new' activeClassName="navbar-nav-active" className="navbar-nav">New Recipe</NavLink> 
+      <br></br>
+      <br></br>
       { loggedIn ? <Logout /> : null}   
     </div>
   )

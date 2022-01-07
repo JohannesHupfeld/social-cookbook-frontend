@@ -24,12 +24,13 @@ const Login = ({ loginForm, updateLoginForm, login, history}) => {
   return (
     <div className='Login'>
       <form onSubmit={handleSubmit}>
-        <h4>PLease login below </h4>
+        <h4>Please login below </h4>
         <input placeholder="username" value={loginForm.username} name="username" type="text" onChange={handleFormChange} />
         <input placeholder="password" value={loginForm.password} name="password" type="text" onChange={handleFormChange} />
         <input type="submit" value="Login" />
         <br></br>
-        <Link to="/signup"> or Signup</Link>
+        <br></br>
+        <Link to="/signup" className='login-to-signup' activeClassName='login-to-signup-active'> or Signup</Link>
       </form>
     </div>
   )

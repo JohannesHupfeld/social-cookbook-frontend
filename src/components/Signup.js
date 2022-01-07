@@ -30,7 +30,8 @@ const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // argum
         <input placeholder="password" value={signupForm.password} name="password" type="text" onChange={handleFormChange} />
         <input type="submit" value="Signup" />
         <br></br>
-        <Link to="/login">or Login</Link>
+        <br></br>
+        <Link to="/login" className='signup-to-login' activeClassName='signup-to-login-active'>or Login</Link>
       </form>
     </div>
   )
