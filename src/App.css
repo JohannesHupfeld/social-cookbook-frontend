@@ -46,14 +46,76 @@
 
 .Login {
   background-color: gold;
+  min-height: 15vh
 }
 
 .Signup {
   background-color: gold;
+  min-height: 15vh
 }
 
 .Navbar {
   background-color: gold;
+  min-height: 20vh
+}
+
+body {
+  background-color: #292929;
+}
+
+Link {
+  font-weight: 900;
+}
+
+.navbar-nav {
+  font-size: x-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.signup-to-login {
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login-to-signup {
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.image {
+  border-radius: 20px;
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+}
+
+h1 {
+  font-size: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+h2 {
+  font-size: 40px;
+  font-family: cursive;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+strong {
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+h3 {
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
 }
 
 @keyframes App-logo-spin {
