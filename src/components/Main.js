@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getCurrentUser } from '../redux/actions/currentUser'
-import { Route, withRouter } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import CreateRecipeForm from './CreateRecipeForm'
 import Recipes from './Recipes'
 import Signup from './Signup'
@@ -20,11 +20,13 @@ class Main extends React.Component {
     return (
       <div className='Main'>
         {/* { loggedIn ? <Navbar /> : <Home />} */}
-        <Route exact path='/signup' component={Signup}/>
-        <Route exact path='/login' component={Login}/>
-        <Route exact path='/recipes' component={Recipes}/>
-        <Route exact path='/' render={(props)=> loggedIn ? <Recipes {...props} /> : <Home {...props}/>}/>
-        <Route exact path='/recipes/new' component={CreateRecipeForm}/>
+        <Switch>
+          <Route exact path='/signup' component={Signup}/>
+          <Route exact path='/login' component={Login}/>
+          <Route exact path='/recipes' component={Recipes}/>
+          <Route exact path='/' render={(props)=> loggedIn ? <Recipes {...props} /> : <Home {...props}/>}/>
+          <Route exact path='/recipes/new' component={CreateRecipeForm}/>
+        </Switch>
       </div>
     )
   }
