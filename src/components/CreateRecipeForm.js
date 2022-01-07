@@ -22,11 +22,19 @@ const CreateRecipeForm = ({ recipeForm, updateCreateRecipeForm, createRecipe, hi
   return (
       <div className='Create-Recipe-Form'>
         <form onSubmit={handleSubmit}>
+          <label for="name">Name</label>
+          <br></br>
           <input placeholder='name' value={recipeForm.name} name="name" type="text" onChange={handleFormChange} />
+          <br></br>
+          <label for="Image">Image</label>
           <br></br>
           <input placeholder='image_url' value={recipeForm.image_url} name="image_url" type="text" onChange={handleFormChange} />
           <br></br>
+          <label for="ingredients">ingredients</label>
+          <br></br>
           <textarea placeholder='ingredients' value={recipeForm.ingredients} name="ingredients" type="text_area" onChange={handleFormChange} />
+          <br></br>
+          <label for="instructions">Instructions</label>
           <br></br>
           <textarea placeholder='instructions' value={recipeForm.instructions} name="instructions" type="text_area" onChange={handleFormChange} />
           <br></br>
