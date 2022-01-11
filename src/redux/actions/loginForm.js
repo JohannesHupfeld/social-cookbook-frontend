@@ -1,5 +1,5 @@
 import { setCurrentUser } from './currentUser.js'
-// import { getRecipes } from './recipes.js'
+import { getRecipes } from './recipes.js'
 import { clearRecipes } from './recipes.js'
 
 // SYNCH
@@ -42,7 +42,7 @@ export const login = (credentials, history) => {
         alert(user.error)
       } else {
         dispatch(setCurrentUser(user.data.attributes))
-        // dispatch(getRecipes())
+        dispatch(getRecipes())
         dispatch(resetLoginForm())
         history.push('/') // if logged in successfuly change url
       }
