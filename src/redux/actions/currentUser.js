@@ -25,8 +25,8 @@ export const getCurrentUser = () => {
       if (user.error) {
         alert(user.error)
       } else {
-        dispatch(setCurrentUser(user.data))
         dispatch(getRecipes())
+        dispatch(setCurrentUser(user.data))
       }
     })
     .catch(console.log)
