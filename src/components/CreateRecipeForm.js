@@ -31,7 +31,7 @@ const CreateRecipeForm = ({ recipeForm, updateCreateRecipeForm, createRecipe, hi
           <br></br>
           <input placeholder='image_url' value={recipeForm.image_url} name="image_url" type="text" onChange={handleFormChange} />
           <br></br>
-          <label for="ingredients">ingredients</label>
+          <label for="ingredients">Ingredients</label>
           <br></br>
           <textarea placeholder='ingredients' value={recipeForm.ingredients} name="ingredients" type="text_area" onChange={handleFormChange} />
           <br></br>
