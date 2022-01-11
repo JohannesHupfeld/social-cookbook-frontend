@@ -24,7 +24,7 @@ class Main extends React.Component {
           <Route exact path='/signup' component={Signup}/>
           <Route exact path='/login' component={Login}/>
           <Route exact path='/recipes' component={Recipes}/>
-          <Route exact path='/' render={(props)=> loggedIn ? <Recipes {...props} /> : <Home {...props}/>}/>
+          <Route exact path='/' render={(props)=> loggedIn ? null : <Home {...props}/>}/>
           <Route exact path='/recipes/new' component={CreateRecipeForm}/>
         </Switch>
       </div>
