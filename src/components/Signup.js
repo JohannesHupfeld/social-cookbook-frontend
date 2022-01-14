@@ -21,10 +21,15 @@ const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // argum
     signup(signupForm, history)
   }
 
+  function handleClick(){ // this and the button should be in its own component possibly in presentational folder 
+    console.log("click")
+    history.goBack()
+  }
+  
   return (
     <div className='Signup'>
       <form onSubmit={handleSubmit}>
-        <h4>Please signup below</h4>
+        <h4>Please Signup Below</h4>
         <input placeholder="name" value={signupForm.name} name="name" type="text" onChange={handleFormChange} />
         <input placeholder="username" value={signupForm.username} name="username" type="text" onChange={handleFormChange} />
         <input placeholder="password" value={signupForm.password} name="password" type="text" onChange={handleFormChange} />
@@ -32,6 +37,9 @@ const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // argum
         <br></br>
         <br></br>
         <Link to="/login" className='signup-to-login'>or Login</Link>
+        <br></br>
+        <br></br>
+        <button onClick={handleClick}>Back</button> 
       </form>
     </div>
   )
