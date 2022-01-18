@@ -160,6 +160,11 @@ h3 {
   
 }
 
+.logo2 {
+  max-width: 100%;
+  height: auto;
+}
+
 .ingredients {
   list-style: none;
 }
