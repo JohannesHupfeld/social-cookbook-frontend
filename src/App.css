@@ -167,6 +167,7 @@ h3 {
 
 .ingredients {
   list-style: none;
+  text-align: left;
 }
 
 @keyframes App-logo-spin {
