@@ -32,7 +32,7 @@ const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // argum
         <h4>Please Signup Below</h4>
         <input placeholder="name" value={signupForm.name} name="name" type="text" onChange={handleFormChange} />
         <input placeholder="username" value={signupForm.username} name="username" type="text" onChange={handleFormChange} />
-        <input placeholder="password" value={signupForm.password} name="password" type="text" onChange={handleFormChange} />
+        <input placeholder="password" value={signupForm.password} name="password" type="password" onChange={handleFormChange} />
         <input type="submit" value="Signup" />
         <br></br>
         <br></br>
