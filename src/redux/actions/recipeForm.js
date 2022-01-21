@@ -1,4 +1,4 @@
- import { setRecipes } from './recipes'
+import { setRecipes } from './recipes'
 //SYNCH
 export const resetCreateRecipeForm = () => {
   return {
