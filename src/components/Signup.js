@@ -21,10 +21,10 @@ const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // argum
     signup(signupForm, history)
   }
 
-  function handleClick(){ // this and the button should be in its own component possibly in presentational folder 
-    console.log("click")
-    history.goBack()
-  }
+  // function handleClick(){ // this and the button should be in its own component possibly in presentational folder 
+  //   console.log("click")
+  //   history.goBack()
+  // }
   
   return (
     <div className='Signup'>
@@ -39,7 +39,7 @@ const Signup = ({ signupForm, updateSignupForm, signup, history }) => { // argum
         <Link to="/login" className='signup-to-login'>or Login</Link>
         <br></br>
         <br></br>
-        <button onClick={handleClick}>Back</button> 
+        {/* <button onClick={handleClick}>Back</button>  */}
       </form>
     </div>
   )
